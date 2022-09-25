@@ -58,14 +58,13 @@ fieldset{
 
 }
 .radio{
-  width: 2vw;
-  
+  width: 5vw;
   display:flex;
   padding-left:50px;
   margin-top:-10px ;
   margin-bottom:15px ;
   justify-content: center;
- align-items: center;
+  align-items: center;
 }
 /* sign Up */
 /*username */
