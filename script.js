@@ -7,6 +7,7 @@ const email = document.getElementById("email");
 const username = document.getElementById("username");
 const usernameL = document.getElementById("usernameL");
 const heading = document.getElementById("heading");
+const radio = document.getElementById("radio");
 
 toggleButton.onclick = () => {
   logIn.classList.toggle("signUp");
@@ -14,7 +15,7 @@ toggleButton.onclick = () => {
   email.classList.toggle("signUp");
   password.classList.toggle("signUp");
   username.classList.toggle("signUp");
-
+  radio.classList.toggle("signup");
   passwordL.classList.toggle("signUp");
   usernameL.classList.toggle("signUp");
 
