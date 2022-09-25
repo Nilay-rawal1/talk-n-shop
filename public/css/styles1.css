@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.formss {
+form {
   height: 70vh;
   width: 60vw;
   background-color: rgba(255, 255, 255, 0.13);
@@ -15,14 +15,14 @@
   border: 2px solid rgba(255, 255, 255, 0.1);
   padding: 30px 35px;
 }
-.formss * {
+form * {
   font-family: "Poppins", sans-serif;
   color: white;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
 }
-.formss h3 {
+form h3 {
   font-size: 32px;
   font-weight: 500;
   line-height: 42px;

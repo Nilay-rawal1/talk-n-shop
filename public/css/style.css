@@ -63,36 +63,56 @@ nav ul li a:hover {
   color: #111;
   background: #fff;
 }
+.forms{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9vh;
+  width: 25vw;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 3px;
+}
+.forms * {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
 .btn{
-  padding: 0px 20px ;
-  padding-top: 3px;
-  border: 2px solid black;
-  border-radius: 6px;
-  font-family: var(--font1);
-  font-size: 16px;
+  
+  padding-top: -20px;
+  margin-bottom:20px ;
+  border: 1px solid transparent;
+  border-radius: 60px;
   cursor: pointer;
+  display: inline;
+  align-items: center;
   transition: all 0.3s ease-in-out;
+  width: 4vw;
 
 
 }
 .btn:hover{
-  background-color: var(--main-bg-color);
-  color: antiquewhite;
+  
+  color:transparent;
 }
 .forms-input{
-width: 50%;
+  width: 6 0%;
   padding: 0px 5px;
   padding-top: 3px;
   font-size: 16px;
-  border: 2px solid black;
+  border: 5px solid transparent;
   border-radius: 4px;
-  margin: 0 13px;
-  font-family: var(--font1);
+  margin: 0 10px;
+  font-family: sans-serif;
 
 }
 .formbox input, textarea{
-width: 52vw;
-padding: 10px 6px ;
+width: 12vw;
+padding: 2px 6px ;
 border: 2px solid lightslategray;
 border-radius: 10px;
 margin: 7px 0;
