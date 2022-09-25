@@ -63,7 +63,87 @@ nav ul li a:hover {
   color: #111;
   background: #fff;
 }
-.forms{
+
+.dropdown-menu {
+  margin-top: -40px;
+  padding-left: -15px;
+  padding-right: 100%;
+  width: 5vw;
+  
+}
+
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+}
+.menu-contents {
+  display: none;
+  position: absolute;
+  background-color: black;
+}
+
+.links,
+.links-hidden {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.links-hidden {
+  display: block;
+}
+.links {
+  display: inline-block;
+}
+.links-hidden:hover,
+.links:hover {
+  text-decoration: none;
+  font-size: 18px;
+  align-items: center;
+  font-weight: 500;
+  color: black;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.dropdown-menu:hover .menu-content {
+  display: block;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.dropdown-menu:hover .menu-contents {
+  display: block;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.dropdown-menu:hover .menu-btn {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  border-radius: 5px;
+
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: 5.5vw;
+}
+.forms {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,10 +161,9 @@ nav ul li a:hover {
   outline: none;
   border: none;
 }
-.btn{
-  
+.btn {
   padding-top: -20px;
-  margin-bottom:20px ;
+  margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 60px;
   cursor: pointer;
@@ -92,14 +171,11 @@ nav ul li a:hover {
   align-items: center;
   transition: all 0.3s ease-in-out;
   width: 4vw;
-
-
 }
-.btn:hover{
-  
-  color:transparent;
+.btn:hover {
+  color: transparent;
 }
-.forms-input{
+.forms-input {
   width: 6 0%;
   padding: 0px 5px;
   padding-top: 3px;
@@ -108,21 +184,20 @@ nav ul li a:hover {
   border-radius: 4px;
   margin: 0 10px;
   font-family: sans-serif;
-
 }
-.formbox input, textarea{
-width: 12vw;
-padding: 2px 6px ;
-border: 2px solid lightslategray;
-border-radius: 10px;
-margin: 7px 0;
-font-size: 15px;
-font-family: serif;
+.formbox input,
+textarea {
+  width: 12vw;
+  padding: 2px 6px;
+  border: 2px solid lightslategray;
+  border-radius: 10px;
+  margin: 7px 0;
+  font-size: 15px;
+  font-family: serif;
 }
-.mx-1{
-margin-left: 23px;
-margin-right: 23px;
-
+.mx-1 {
+  margin-left: 23px;
+  margin-right: 23px;
 }
 
 /* product */

@@ -9,6 +9,7 @@ const usernameL = document.getElementById("usernameL");
 const heading = document.getElementById("heading");
 const radio = document.getElementById("radio");
 
+
 toggleButton.onclick = () => {
   logIn.classList.toggle("signUp");
 
@@ -31,3 +32,4 @@ toggleButton.onclick = () => {
     heading.innerText = "Sign Up Here";
   }
 };
+
