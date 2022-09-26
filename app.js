@@ -6,8 +6,6 @@ const app = express();
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongoose = require("mongoose");
 const { stringify } = require("node:querystring");
-
-
 mongoose.connect("mongodb://localhost:27017/ProjectDB", {
   useNewUrlParser: true,
 });
@@ -66,3 +64,5 @@ app.post("/feedback", function (req, res) {
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+
