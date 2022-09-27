@@ -25,6 +25,7 @@ toggleButton.onclick = () => {
     toggleButton.innerText = "Sign Up";
 
     heading.innerText = "Log In Here";
+    
    
   } else {
     button.innerText = "Sign Up";

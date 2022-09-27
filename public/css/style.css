@@ -607,3 +607,10 @@ button:hover {
   background-color:black;
   background-blend-mode:color-burn;
 }
+.h1c{
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+}
