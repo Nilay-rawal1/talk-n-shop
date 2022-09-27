@@ -608,9 +608,14 @@ button:hover {
   background-blend-mode:color-burn;
 }
 .h1c{
-  color: whitesmoke;
+  color: rgb(222, 186, 198);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 15vh;
+}
+.spanc{
+  color:lightseagreen;
+  font-weight: 900;
+  font-size:larger;
 }
