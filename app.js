@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost:27017/ProjectDB", {
   useNewUrlParser: true,
 });
 var conn = mongoose.connection;
-
+app.use(express.static(__dirname + "/public"));
 conn.on("connected", function () {
   console.log("database is connected successfully");
 });
@@ -38,14 +38,21 @@ const feedback = new Feedback({
 });
 // feedback.save();
 
-const hostname = "127.0.0.1";
 const port = 3000;
 
+// Require static assets from public folder
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/home", function (req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+// Set 'views' directory for any views
+// being rendered res.render()
+app.set("views", "views");
+
+// Set view engine as EJS
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("public"));
+app.get("/", function (req, res) {
+  res.render("index");
 });
 
 app.post("/feedback", function (req, res) {
@@ -53,17 +60,27 @@ app.post("/feedback", function (req, res) {
   var feedback = String(req.body.issue);
   var email = String(req.body.email);
   console.log(req.body);
-  function myFunction(platform) {
-    console.log(
-      "Hi," + name + " Thanks For Your Feedback" + ".Welcome To " + platform
-    );
-  }
-  setTimeout(myFunction, 6000, "Talknshop");
   res.redirect("/");
 });
 
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.get("/checkout", (req, res) => {
+  res.render("checkout");
 });
-
-
+app.get("/food", (req, res) => {
+  res.render("food");
+});
+app.get("/electronics", (req, res) => {
+  res.render("electronics");
+});
+app.get("/fashion", (req, res) => {
+  res.render("fashion");
+});
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+app.get("/search", (req, res) => {
+  res.render("search");
+});
+app.listen(port, () => {
+  console.log(`Server running at port ${port}`);
+});
