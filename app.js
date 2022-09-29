@@ -81,6 +81,9 @@ app.get("/signup", (req, res) => {
 app.get("/search", (req, res) => {
   res.render("search");
 });
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 app.listen(port, () => {
-  console.log(`Server running at port ${port}`);
+  console.log(`Server running at port http://localhost:${port}`);
 });

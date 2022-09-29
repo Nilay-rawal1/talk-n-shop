@@ -70,9 +70,7 @@ nav ul li a:hover {
   padding-right: 100%;
   width: 5vw;
   z-index: 5;
-  
 }
-
 
 .menu-content {
   display: none;
@@ -83,7 +81,7 @@ nav ul li a:hover {
 .menu-contents {
   display: none;
   position: absolute;
-  background-color:black;
+  background-color: black;
   z-index: 1;
 }
 
@@ -606,54 +604,54 @@ button:hover {
   height: 90px;
   text-align: center;
 }
-.bgc{
-  background-color:black;
-  background-blend-mode:color-burn;
+.bgc {
+  background-color: black;
+  background-blend-mode: color-burn;
 }
-.h1c{
+.h1c {
   color: rgb(222, 186, 198);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 15vh;
 }
-.spanc{
-  color:lightseagreen;
+.spanc {
+  color: lightseagreen;
   font-weight: 900;
-  font-size:larger;
+  font-size: larger;
 }
-.product-container{
+.product-container {
   padding: 0 10vw;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
-.product-container::-webkit-scrollbar{
+.product-container::-webkit-scrollbar {
   display: none;
 }
 
-.product-card{
+.product-card {
   flex: 0 0 auto;
   width: 250px;
   height: 450px;
   margin-right: 40px;
 }
 
-.product-image{
+.product-image {
   position: relative;
   width: 100%;
   height: 350px;
   overflow: hidden;
 }
 
-.product-thumb{
+.product-thumb {
   width: 100%;
   height: 350px;
   object-fit: cover;
 }
 
-.discount-tag{
+.discount-tag {
   position: absolute;
   background: #fff;
   padding: 5px;
@@ -664,7 +662,7 @@ button:hover {
   text-transform: capitalize;
 }
 
-.card-btn{
+.card-btn {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -681,26 +679,26 @@ button:hover {
   opacity: 0;
 }
 
-.product-card:hover .card-btn{
+.product-card:hover .card-btn {
   opacity: 1;
 }
 
-.card-btn:hover{
+.card-btn:hover {
   background: #efefef;
 }
 
-.product-info{
+.product-info {
   width: 100%;
   height: 100px;
   padding-top: 10px;
 }
 
-.product-brand{
+.product-brand {
   text-transform: uppercase;
   color: white;
 }
 
-.product-short-des{
+.product-short-des {
   width: 100%;
   height: 20px;
   line-height: 20px;
@@ -710,20 +708,20 @@ button:hover {
   margin: 5px 0;
 }
 
-.price{
+.price {
   font-weight: 900;
   font-size: 20px;
   color: white;
 }
 
-.actual-price{
+.actual-price {
   margin-left: 20px;
-  margin-top:-5px;
+  margin-top: -5px;
   opacity: 0.5;
   color: lavender;
   text-decoration: line-through;
 }
 
-.cartbg{
+.cartbg {
   margin-top: 55px;
 }
