@@ -1,59 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talk N Shop</title>
-  <link rel="stylesheet" type="text/css" href="css/styles1.css">
-  <script src="https://kit.fontawesome.com/71609d30f9.js" crossorigin="anonymous"></script>
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/public/css/reg.css">
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $("#form").submit(function (event) {
+        event.preventDefault();
+
+        $.ajax({
+          type: 'POST',
+          url: '/login',
+          data: $('#form').serialize(),
+          dataType: "json",
+          success: function (response) {
+            //alert("a");
+            //console.log(response.Success);
+            $('#form')[0].reset();
+
+            document.getElementById("check").innerHTML = response.Success;
+            //ADD THIS CODE
+            setTimeout(function () {
+              document.getElementById("check").innerHTML = "";
+            }, 3000);
+            if (response.Success == "Success!") {
+              document.getElementById("aa").click();
+            };
+          },
+          error: function () {}
+        })
+      });
+
+    });
+  </script>
 </head>
 
 <body>
-  <section id="login" class="logIn">
-    <form>
-      <h3 id="heading">Login Here</h3>
+  <div class="col-md-4 col-md-offset-4">
+    <div>
+      <p>Login</p>
+    </div>
+    <div class="form-group">
+      <form id="form" method="post">
+        <input type="text" name="email" placeholder="E-mail" required="" class="form-control"><br />
+        <input type="password" name="password" placeholder="Password" required="" class="form-control"><br />
+        <input type="submit" value="Login" class="btn btn-success">
+      </form>
+    </div>
+    <div class="mssg bg-danger">
+      <span id="check"></span>
+    </div>
+    <div id="LangTable"><a href="/profile" id="aa"></a>
+    </div>
+    <div><span>Do you forgot password?</span><a href="/forgetpass">Click here</a>
+      <div><span>Create a new Account?</span><a href="/">Register here</a>
 
-
-      <input type="text" placeholder="Email or Phone" id="usernameL">
-
-
-      <input type="email" placeholder="Email Adress / Phone Number" id="email">
-
-
-      <input type="password" placeholder="Create Password" id="password">
-      <input type="password" placeholder="Password" id="passwordL">
-
-
-      <button id="button">Login</button>
-
-      <div id="buttonT" onclick="location.href='/signup'">Sign Up</div>
-
-      <div class="ctn">
-        <div class="go"> <a href="/"><i class=" fa-solid fa-house"> home</i> </a></div>
       </div>
 
-
-
-      <div class="social">
-        <div class="go"><i class="fa-brands fa-google"></i> Google</div>
-        <div class="fb"><i class="fa-brands fa-square-facebook"></i> Facebook</div>
-    </form>
-
-  </section>
-
-
-  <!-- Footer -->
-  <div class="footer">
-    Copyright @TalknShop | 2022
-  </div>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="/app.js"></script>
-
-
+    </div>
 </body>
 
 </html>

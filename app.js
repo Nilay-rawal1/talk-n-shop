@@ -4,40 +4,38 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const mongoose = require("mongoose");
 const { stringify } = require("node:querystring");
-
-mongoose.connect("mongodb://localhost:27017/ProjectDB", {
-  useNewUrlParser: true,
-});
-var conn = mongoose.connection;
-app.use(express.static(__dirname + "/public"));
-conn.on("connected", function () {
-  console.log("database is connected successfully");
-});
-conn.on("disconnected", function () {
-  console.log("database is disconnected successfully");
-});
-conn.on("error", console.error.bind(console, "connection error:"));
-
-const FeedbackSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Please check your data entry , no name specified!"],
+var mongoose = require("mongoose");
+var session = require("express-session");
+var MongoStore = require("connect-mongo");
+mongoose.connect(
+  "mongodb://localhost/registrations",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   },
-  email: String,
-  feedback: String,
-});
+  (err) => {
+    if (!err) {
+      console.log("MongoDB Connection Succeeded.");
+    } else {
+      console.log("Error in DB connection : " + err);
+    }
+  }
+);
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {});
 
-const Feedback = mongoose.model("Feedback", FeedbackSchema);
+app.use(
+  session({
+    secret: "work hard",
+    resave: true,
+    saveUninitialized: false,
+  })
+);
 
-const feedback = new Feedback({
-  name: "Lakshya",
-  email: "abc@gmail.com",
-  feedback: "Great experience",
-});
-// feedback.save();
-
+var index = require("./routes/index");
+app.use("/signup", index);
 const port = 3000;
 
 // Require static assets from public folder
@@ -52,7 +50,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.get("/", function (req, res) {
-  res.render("index");
+  res.render("talk");
 });
 
 app.post("/feedback", function (req, res) {
@@ -75,15 +73,11 @@ app.get("/electronics", (req, res) => {
 app.get("/fashion", (req, res) => {
   res.render("fashion");
 });
-app.get("/signup", (req, res) => {
-  res.render("signup");
-});
+
 app.get("/search", (req, res) => {
   res.render("search");
 });
-app.get("/login", (req, res) => {
-  res.render("login");
-});
+
 app.listen(port, () => {
   console.log(`Server running at port http://localhost:${port}`);
 });
